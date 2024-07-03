@@ -8,17 +8,10 @@ const dropZones = document.querySelectorAll(".drop-zone");
 const puzzlePiecesDiv = document.querySelector(".puzzle-pieces");
 
 //functions
-function changeBGImage(event) {
-    //console.log("changeBGimage called");
-    //Method 1
-    //console.log(this.id);
-    //background-image: url('../images/backGround0.jpg');
-    // puzzleBoard.style.backgroundImage = `url('./images/backGround${this.id}.jpg')`;
+function changeBGImage() {
+    puzzleBoard.style.backgroundImage = `url('./images/backGround${this.dataset.bgrf}.jpg')`;
+    puzzlePieces.forEach((piece) => puzzlePiecesDiv.appendChild(piece));
 
-    //Method 2
-    
-    console.log(event.currentTarget.id);
-    puzzleBoard.style.backgroundImage = `url('./images/backGround${event.currentTarget.id}.jpg')`;
 }
 
 function handleStartDrag() {
